@@ -1,7 +1,13 @@
 import React, { useContext, useState } from "react";
 import { TodosContext } from "../../Contexts/TodosContext";
-import { TextField, Button, makeStyles } from "@material-ui/core";
-
+import {
+  TextField,
+  Button,
+  makeStyles,
+  CardActionArea,
+  Paper
+} from "@material-ui/core";
+import { KeyboardArrowDown } from "@material-ui/icons";
 const useStyles = makeStyles(theme => ({
   textFeild: {
     width: "20rem",
@@ -30,8 +36,7 @@ export default function AddForm(props) {
     <div
       style={{
         ...props.style,
-        display: "flex",
-        justifyContent: "center"
+        display: "flex"
       }}
     >
       <div style={{ marginRight: "2rem" }}>
@@ -56,10 +61,38 @@ export default function AddForm(props) {
               setInput("");
             }
           }}
+          endIcon={<KeyboardArrowDown />}
+          style={{ minWidth: "3rem" }}
         >
-          add
+          <div style={{ marginRight: "3rem" }}>ADD</div>
         </Button>
       </div>
+      {/* <CardActionArea style = {{minWidth : '3rem' , display : 'flex' , justifyContent : 'space-between'}}>
+
+          <div>ADD</div>
+
+      </CardActionArea> */}
+      <CardActionArea  style={{
+            minWidth: "5rem",
+            minHeight: "2.5rem",
+            backgroundColor: "",
+            justifyContent: "center",
+            alignItems: "center",
+            display: "flex"
+          }}>
+        <Paper
+          style={{
+            minWidth: "5rem",
+            minHeight: "2.5rem",
+            backgroundColor: "",
+            justifyContent: "center",
+            alignItems: "center",
+            display: "flex"
+          }}
+        >
+          Button
+        </Paper>
+      </CardActionArea>
     </div>
   );
 }
